@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #eef3f8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8fafc;
+  --color-ink: #101828;
+  --color-muted: #667085;
+  --color-subtle: #98a2b3;
+  --color-line: #d9e2ec;
+  --color-primary: #2854c5;
+  --color-primary-hover: #1f3f9c;
+  --color-primary-soft: #e8efff;
+  --color-success: #188a5a;
+  --color-success-hover: #116b46;
+  --color-success-soft: #e7f8ef;
+  --color-danger: #c83349;
+  --color-danger-hover: #a3293b;
+  --color-danger-soft: #fdecee;
+  --color-warning: #b85b12;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 12px 30px rgba(16, 24, 40, 0.09);
+  --shadow-lg: 0 24px 70px rgba(16, 24, 40, 0.15);
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at top left, rgba(40, 84, 197, 0.14), transparent 30rem),
+    linear-gradient(135deg, #f8fbff 0%, var(--color-bg) 46%, #f6f0e8 100%);
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 40px;
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+  transform: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(40, 84, 197, 0.22);
+  outline-offset: 2px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  background: #fff;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+input {
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+textarea {
+  min-height: 170px;
+  padding: 13px 14px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-subtle);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(40, 84, 197, 0.11);
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.logout-btn,
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-success:hover,
+.btn-danger:hover,
+.logout-btn:hover,
+.login-btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  padding: 0 18px;
+  color: #fff;
+  background: var(--color-primary);
+  box-shadow: 0 10px 18px rgba(40, 84, 197, 0.22);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  padding: 0 16px;
+  color: #24324a;
+  background: #fff;
+  border: 1px solid var(--color-line);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface-soft);
+  border-color: #c4d1dd;
+}
+
+.btn-success {
+  padding: 0 16px;
+  color: #fff;
+  background: var(--color-success);
+}
+
+.btn-success:hover {
+  background: var(--color-success-hover);
+}
+
+.btn-danger {
+  padding: 0 16px;
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background: var(--color-danger-hover);
+}
+
+.btn-primary:disabled:hover,
+.btn-secondary:disabled:hover,
+.btn-success:disabled:hover,
+.btn-danger:disabled:hover,
+.logout-btn:disabled:hover,
+.login-btn:disabled:hover {
+  transform: none;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    background:
+      radial-gradient(circle at top, rgba(40, 84, 197, 0.12), transparent 22rem),
+      var(--color-bg);
+  }
+}
