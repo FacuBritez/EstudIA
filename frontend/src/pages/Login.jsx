@@ -1,4 +1,5 @@
 import { supabase } from "../lib/supabase";
+import { APP_URL } from "../lib/config";
 import Logo from "../images/Logo.png";
 import "./Login.css";
 
@@ -7,7 +8,7 @@ export default function Login() {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: "http://localhost:5173/notes",
+        redirectTo: `${APP_URL}/notes`,
       },
     });
   }

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../lib/config";
 import "./Notes.css";
-
-const API_URL = "https://estudia-k9i2.onrender.com";
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
