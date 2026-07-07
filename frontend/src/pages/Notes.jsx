@@ -3,6 +3,8 @@ import { supabase } from "../lib/supabase";
 import { useNavigate } from "react-router-dom";
 import "./Notes.css";
 
+const API_URL = "https://estudia-k9i2.onrender.com";
+
 export default function Notes() {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
@@ -101,7 +103,7 @@ export default function Notes() {
     setLoadingQuizId(note.id);
 
     try {
-      const res = await fetch("http://localhost:3000/ai/quiz", {
+      const res = await fetch(`${API_URL}/ai/quiz`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: note.content }),
@@ -129,7 +131,7 @@ export default function Notes() {
     setLoadingSummaryId(note.id);
 
     try {
-      const res = await fetch("http://localhost:3000/ai/summary", {
+      const res = await fetch(`${API_URL}/ai/summary`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: note.content }),
