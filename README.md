@@ -139,21 +139,9 @@ En producción, `VITE_API_URL` debe apuntar a la URL pública del backend desple
 
 ---
 
-# 🌐 Deploy
-
-### Frontend (Vercel)
-
-https://TU-URL.vercel.app
-
-### Backend (Render)
-
-https://TU-URL.onrender.com
-
----
-
 # 📸 Captura de pantalla
 
-*(Agregar una captura de la aplicación.)*
+![Captura de EstudIA](captura.png)
 
 ---
 
